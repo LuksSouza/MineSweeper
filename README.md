@@ -3,14 +3,14 @@ Repositório destinado ao desenvolvimento de um jogo de campo minado em Ruby.
 
 ## Espeficicação do Projeto
 
-CAMPO MINADO
+###CAMPO MINADO
 
 Sua empresa está criando um jogo de campo minado (Minesweeper), e precisa da sua ajuda para construir a engine em Ruby que gerencia o estado do jogo e as jogadas. O jogo será lançado em vários dispositivos, e cada um deles será responsável pelo tratamento de input e output para o usuário. Sua engine deve fornecer uma interface de métodos que podem ser chamados pelo cliente para interagir com o jogo: clicar em uma célula, saber o status do tabuleiro, saber se o jogo já acabou etc.
 
 Nota: usamos a terminologia "clicar" para traçar uma analogia com uma jogada de escolher uma célula no campo minado. Clicar, literalmente, não faz parte deste exercício; não é necessária uma interface gráfica.
 
 
-Requisitos:
+###Requisitos:
 
 1. No início do jogo, a engine deve aceitar parâmetros de altura, largura e número de bombas no tabuleiro. As bombas devem ser distribuídas aleatoriamente, de forma que todas as combinações de posições possíveis tenham a mesma probabilidade de acontecer.  FEITO
 
@@ -18,17 +18,16 @@ Requisitos:
 
   - play: recebe as coordenadas x e y do tabuleiro e clica na célula correspondente; a célula passa a ser "descoberta". Deve retornar um booleano informando se a jogada foi válida. A jogada é válida somente se a célula selecionada ainda não foi clicada e ainda não tem uma bandeira. Caso a célula clicada seja válida, não tenha uma bomba e seja vizinha de zero bombas, todos os vizinhos sem bomba e sem bandeira daquela célula também devem ser descobertas, e devem seguir esta mesma lógica para seus próprios vizinhos (esse é o comportamento de expansão quando clicamos em uma grande área sem bombas no jogo de campo minado). FALTA A LÓGICA DE EXPANSÃO
 
-  - flag: adiciona uma bandeira a uma célula ainda não clicada ou remove a bandeira preexistente de uma célula. Retorna um booleano informando se a jogada foi válida.
-      FEITO
+  - flag: adiciona uma bandeira a uma célula ainda não clicada ou remove a bandeira preexistente de uma célula. Retorna um booleano informando se a jogada foi válida.	FEITO
 
-  - still_playing?: retorna true se o jogo ainda está em andamento, ou false se o jogador tiver alcançado a condição de vitória (todas as células sem bomba foram descobertas) ou de derrota (jogador clicou em uma célula sem bandeira e ela tinha uma bomba). FALTA A VALIDAÇÃO DE CÉLULAS JOGADAS
+  - still_playing?: retorna true se o jogo ainda está em andamento, ou false se o jogador tiver alcançado a condição de vitória (todas as células sem bomba foram descobertas) ou de derrota (jogador clicou em uma célula sem bandeira e ela tinha uma bomba). FEITO
 
   - victory?: retorna true somente se o jogo já acabou e o jogador ganhou.  FEITO
 
-  - board_state: retorna uma representação atual do tabuleiro, indicando quais células ainda não foram descobertas, se alguma foi descoberta e tem uma bomba, quais foram descobertas e têm células com bombas como vizinhas (indicar quantas são as vizinhas minadas), quais não estão descobertas e com bandeira. Se o cliente passar o hash {xray: true} como parâmetro, deve indicar a localização de todas as bombas, mas somente se o jogo estiver terminado.
+  - board_state: retorna uma representação atual do tabuleiro, indicando quais células ainda não foram descobertas, se alguma foi descoberta e tem uma bomba, quais foram descobertas e têm células com bombas como vizinhas (indicar quantas são as vizinhas minadas), quais não estão descobertas e com bandeira. Se o cliente passar o hash {xray: true} como parâmetro, deve indicar a localização de todas as bombas, mas somente se o jogo estiver terminado.	FEITO
 
 
-3. Uma célula descoberta deve saber informar o número de bombas adjacentes a ela, se houver alguma (entre 1 e 8). Se não tiver bombas adjacentes, deve ser considerada uma célula descoberta e vazia.
+3. Uma célula descoberta deve saber informar o número de bombas adjacentes a ela, se houver alguma (entre 1 e 8). Se não tiver bombas adjacentes, deve ser considerada uma célula descoberta e vazia.	FEITO
 
 4. Crie pelo menos dois tipos de objeto "printer" que mostrem no terminal o estado do tabuleiro. Esses printers servem como exemplo de como um cliente pode consumir o método "board_state" da sua engine. Por exemplo, um deles pode simplesmente imprimir uma matriz mapeando os estados para caracteres segundo a especificação:
 
@@ -39,13 +38,13 @@ board_format = {
   flag: 'F'
 }
 
-5. Ao efetuar uma jogada em uma bomba (sem bandeira), o jogo deve terminar e nenhuma outra jogada subsequente deve ser considerada válida.
+5. Ao efetuar uma jogada em uma bomba (sem bandeira), o jogo deve terminar e nenhuma outra jogada subsequente deve ser considerada válida.	FEITO
 
 6. Demonstre, da maneira que achar melhor, que o seu projeto funciona como especificado.
 
 ===
 
-Pequeno exemplo de uso da engine por um cliente:
+###Pequeno exemplo de uso da engine por um cliente:
 
 width, height, num_mines = 10, 20, 50
 game = Minesweeper.new(width, height, num_mines)
