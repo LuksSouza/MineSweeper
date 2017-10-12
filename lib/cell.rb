@@ -9,7 +9,7 @@ class Cell
     attr_accessor :y
     
     #Definido dois parâmetros para a célula: 
-    #conteúdo, que armazenará se a célula possui bomba, já foi descoberta ou está vazia e 
+    #conteúdo, que armazenará se a célula possui bomba, já foi descoberta, está vazia ou número de bombas ao redor
     #estado, que armazenará se a célula possui flag ou não
     attr_accessor :content
     attr_accessor :state
