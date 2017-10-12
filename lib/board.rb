@@ -36,7 +36,7 @@ class Board
             end
         end
 
-        self.insert_mines_in_board number_of_mines
+        insert_mines_in_board number_of_mines
     end
     
     #Método responsável por inserir minas randomicamente no campo,
