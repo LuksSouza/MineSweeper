@@ -16,7 +16,7 @@ Nota: usamos a terminologia "clicar" para traçar uma analogia com uma jogada de
 
 2. Sua engine deve expor um conjunto mínimo de métodos para o cliente:
 
-  - play: recebe as coordenadas x e y do tabuleiro e clica na célula correspondente; a célula passa a ser "descoberta". Deve retornar um booleano informando se a jogada foi válida. A jogada é válida somente se a célula selecionada ainda não foi clicada e ainda não tem uma bandeira. Caso a célula clicada seja válida, não tenha uma bomba e seja vizinha de zero bombas, todos os vizinhos sem bomba e sem bandeira daquela célula também devem ser descobertas, e devem seguir esta mesma lógica para seus próprios vizinhos (esse é o comportamento de expansão quando clicamos em uma grande área sem bombas no jogo de campo minado). FALTA A LÓGICA DE EXPANSÃO
+  - play: recebe as coordenadas x e y do tabuleiro e clica na célula correspondente; a célula passa a ser "descoberta". Deve retornar um booleano informando se a jogada foi válida. A jogada é válida somente se a célula selecionada ainda não foi clicada e ainda não tem uma bandeira. Caso a célula clicada seja válida, não tenha uma bomba e seja vizinha de zero bombas, todos os vizinhos sem bomba e sem bandeira daquela célula também devem ser descobertas, e devem seguir esta mesma lógica para seus próprios vizinhos (esse é o comportamento de expansão quando clicamos em uma grande área sem bombas no jogo de campo minado). FEITO
 
   - flag: adiciona uma bandeira a uma célula ainda não clicada ou remove a bandeira preexistente de uma célula. Retorna um booleano informando se a jogada foi válida.	FEITO
 
@@ -38,9 +38,11 @@ board_format = {
   flag: 'F'
 }
 
+FEITO
+
 5. Ao efetuar uma jogada em uma bomba (sem bandeira), o jogo deve terminar e nenhuma outra jogada subsequente deve ser considerada válida.	FEITO
 
-6. Demonstre, da maneira que achar melhor, que o seu projeto funciona como especificado.
+6. Demonstre, da maneira que achar melhor, que o seu projeto funciona como especificado.	FEITO	play.rb
 
 ===
 
