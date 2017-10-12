@@ -67,3 +67,9 @@ else
   puts "Você perdeu! As minas eram:"
   PrettyPrinter.new.print(game.board_state(xray: true))
 end
+
+===
+
+###Meu exemplo de uso/teste da engine:  utilizar o arquivo play.rb
+
+Obs: Alterar o caminho dos require_relative do play.rb
